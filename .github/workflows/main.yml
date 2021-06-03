@@ -34,5 +34,6 @@ jobs:
         run: |
           nohp python serv.py &
           sleep 5
+          netstat -tlnp
           curl -v http://localhost:8080
           
