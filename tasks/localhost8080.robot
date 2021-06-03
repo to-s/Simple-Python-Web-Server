@@ -5,6 +5,7 @@ Library           OperatingSystem
 Library           Process
 
 *** Variables ***
+${LOCALHOST}
 ${WAITFORTAG}     tag:h1
 
 *** Test Cases ***
@@ -15,7 +16,7 @@ Check localhost
 
 *** Keywords ***
 Wait for localhost
-    Open Browser    http://localhost:8080
+    Open Browser    http://${LOCALHOST}:8080
     Wait Until Page Contains Element    ${WAITFORTAG}
 
 Save content
