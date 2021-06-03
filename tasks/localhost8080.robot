@@ -6,6 +6,7 @@ Library           Process
 
 *** Variables ***
 ${LOCALHOST}
+${DEFAULT_LOCALHOST}    127.0.0.1
 ${WAITFORTAG}     tag:h1
 
 *** Test Cases ***
@@ -16,6 +17,7 @@ Check localhost
 
 *** Keywords ***
 Wait for localhost
+    Run Keyword If    '${LOCALHOST}' == ''    Set Test Variable    ${LOCALHOST}    ${DEFAULT_LOCALHOST}
     Open Browser    http://${LOCALHOST}:8080
     Wait Until Page Contains Element    ${WAITFORTAG}
 
