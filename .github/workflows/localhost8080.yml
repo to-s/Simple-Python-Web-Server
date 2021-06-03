@@ -9,11 +9,11 @@ on:
   workflow_dispatch:
 
 jobs:
-    find_recipe:
+    localhost8080:
         runs-on: ubuntu-latest
         steps:
         - uses: actions/checkout@v2
-        - name: Find recipe from foodie.fi
+        - name: Connect to localhost
           run: |
             docker run \
               -v ${PWD}/reports:/opt/robotframework/reports:Z \
