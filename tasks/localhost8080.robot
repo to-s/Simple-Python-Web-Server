@@ -1,5 +1,5 @@
 *** Settings ***
-Test Setup        Open Browser    http://localhost:8080
+Test Setup        Open Browser    http://127.0.0.1:8080
 Test Teardown     Close Browser
 Library           SeleniumLibrary
 Library           OperatingSystem
