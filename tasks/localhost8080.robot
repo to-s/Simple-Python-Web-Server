@@ -1,5 +1,4 @@
 *** Settings ***
-Test Setup        Open Browser    http://localhost:8080
 Test Teardown     Close Browser
 Library           SeleniumLibrary
 Library           OperatingSystem
@@ -16,6 +15,7 @@ Check localhost
 
 *** Keywords ***
 Wait for localhost
+    Open Browser    http://localhost:8080
     Wait Until Page Contains Element    ${WAITFORTAG}
 
 Save content
