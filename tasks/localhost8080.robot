@@ -25,5 +25,4 @@ Save content
 
 Check IP setting
     ${result} =    Run Process    ip    addr
-    Log To Console    ${result}
-    Append To File    ipaddr.txt    ${result}
+    Log To Console    ${result.stdout}
