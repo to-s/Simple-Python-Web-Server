@@ -7,11 +7,6 @@ on:
       - master
   pull_request:
   workflow_dispatch:
-    inputs:
-      ip:
-        description: 'IP'
-        default: '127.0.0.1'
-        required: true
 
 jobs:
     localhost8080:
@@ -33,7 +28,6 @@ jobs:
               -v ${PWD}/reports:/opt/robotframework/reports:Z \
               -v ${PWD}/tasks:/opt/robotframework/tests:Z \
               -v ${PWD}/reports/file://opt/robotframework/temp/reports/file/ \
-              -e ROBOT_OPTIONS="--variable LOCALHOST:${{ github.event.inputs.ip }}" \
               --network="host" \
               --user $(id -u):$(id -g) \
               ppodgorsek/robot-framework:latest
