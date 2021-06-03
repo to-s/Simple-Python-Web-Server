@@ -15,7 +15,7 @@ jobs:
         - uses: actions/checkout@v2
         - name: Connect to localhost
           run: |
-            mkdir /opt/robotframework/reports
+            mkdir reports
             docker run \
               -v ${PWD}/reports:/opt/robotframework/reports:Z \
               -v ${PWD}/tasks:/opt/robotframework/tests:Z \
