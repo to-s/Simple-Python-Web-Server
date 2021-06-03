@@ -13,9 +13,17 @@ jobs:
         runs-on: ubuntu-latest
         steps:
         - uses: actions/checkout@v2
-        - name: Connect to localhost
+        - name: Run robot
           run: |
             mkdir reports
+        - name: Run a localhost server
+          run: |
+            nohup python serv.py &
+            sleep 5
+            sudo netstat -tlnp
+            curl -v http://localhost:8080
+        - name: Run robot
+          run: |
             docker run \
               -v ${PWD}/reports:/opt/robotframework/reports:Z \
               -v ${PWD}/tasks:/opt/robotframework/tests:Z \
