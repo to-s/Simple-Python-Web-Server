@@ -21,7 +21,9 @@ Wait for localhost
 Save content
     ${text}    Get Text    ${WAITFORTAG}
     Log To Console    ${text}
-    Append To File    result.txt    ${text}
+    Append To File    content.txt    ${text}
 
 Check IP setting
     ${result} =    Run Process    ip    addr
+    Log To Console    ${result}
+    Append To File    ipaddr.txt    ${result}
